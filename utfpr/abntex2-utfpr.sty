@@ -23,42 +23,53 @@
 
 \ProvidesPackage{abntex2-utfpr}[2016/11/15 Adaptando modelo da UTFPR para padrões abnTeX2]
 
-% Constantes espscíficas para UTFPR
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DEFINICOES DA UTFPR
+
 \providecommand{\imprimirdepartamento}{}
 \newcommand{\departamento}[1]{\renewcommand{\imprimirdepartamento}{#1}}
 
 \providecommand{\imprimirprograma}{}
 \newcommand{\programa}[1]{\renewcommand{\imprimirprograma}{#1}}
 
-% alterando a capa
+\providecommand{\imprimirarea}{}
+\newcommand{\area}[1]{\renewcommand{\imprimirarea}{#1}}
+
+\providecommand{\imprimirnivel}{}
+\newcommand{\nivel}[1]{\renewcommand{\imprimirnivel}{#1}}
+
+% desativa hifenizacao mantendo o texto justificado.
+% thanks to Emilio C. G. Wille
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\sloppy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CAPA
+
 \renewcommand{\imprimircapa}{%
   \begin{capa}%
     \center
     \large\MakeUppercase{\imprimirinstituicao}
 
-    \abntex@ifnotempty{\UTFPRdepartamentodata} {\MakeUppercase{\UTFPRdepartamentodata}}
+    \abntex@ifnotempty{\imprimirdepartamento} {\MakeUppercase{\imprimirdepartamento}}
 
     \large\MakeUppercase{\imprimirprograma}
-
     \vspace{12pt}
 
-    {\ABNTEXchapterfont\large\imprimirautor}
+    \MakeUppercase{\ABNTEXchapterfont\large\imprimirautor}
 
     \vspace{60pt}
-  	\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
-
-    \vspace{12pt}
-
     \begin{center}
-        \ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+        \large\ABNTEXchapterfont \MakeUppercase{\imprimirtitulo}
     \end{center}
     \vfill
 
     \large\imprimirlocal
 
     \large\imprimirdata
-
-    \vspace*{1cm}
   \end{capa}
 }
 
@@ -68,47 +79,37 @@
 \makeatletter
 
 \renewcommand{\folhaderostocontent}{
-\begin{center}
-{\ABNTEXchapterfont\Large \imprimeinstituicao}
+    \begin{center}
+        \MakeUppercase{\ABNTEXchapterfont\large\imprimirautor}
 
-    \vspace*{1cm}
+        \vspace*{\fill}\vspace*{\fill}
+        \begin{center}
+            \ABNTEXchapterfont\bfseries\Large\imprimirtitulo
+        \end{center}
 
-{\ABNTEXchapterfont\large\imprimirautor}
+        \vspace*{\fill}
+        \abntex@ifnotempty{\imprimirpreambulo}{%
+            \hspace{.45\textwidth}
+            \begin{minipage}{.5\textwidth}
+                \SingleSpacing
+                \imprimirpreambulo
+                \par
+                {\large\imprimirorientadorRotulo~\imprimirorientador\par}
+                \abntex@ifnotempty{\imprimircoorientador}{%
+                  {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+                }%
+            \end{minipage}%
+            \vspace*{\fill}
+        }%
 
-\vspace*{\fill}\vspace*{\fill}
+        \vspace*{\fill}
+        {\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
 
-\begin{center}
-\ABNTEXchapterfont\bfseries\Large\imprimirtitulo
-\end{center}
-
-\vspace*{\fill}
-
-\abntex@ifnotempty{\imprimirpreambulo}{%
-  \hspace{.45\textwidth}
-  \begin{minipage}{.5\textwidth}
-  \SingleSpacing
-  \imprimirpreambulo
-  \end{minipage}%
-  \vspace*{\fill}
-}%
-
-{\large\imprimirorientadorRotulo~\imprimirorientador\par}
-
-\abntex@ifnotempty{\imprimircoorientador}{%
-  {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
-}%
-
-\vspace*{\fill}
-
-{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
-
-{\large\imprimirlocal}
-
-\par
-
-{\large\imprimirdata}
-\vspace*{1cm}
-\end{center}
+        {\large\imprimirlocal}
+        \par
+        {\large\imprimirdata}
+        \vspace*{1cm}
+    \end{center}
 }
 
 \makeatother

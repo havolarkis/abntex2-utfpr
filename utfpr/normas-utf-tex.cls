@@ -12,11 +12,11 @@
 % http://www.latex-project.org/lppl.txt
 % and version 1.3 or later is part of all distributions of LaTeX
 % version 2005/12/01 or later.
-% 
+%
 % This work has the LPPL maintenance status `maintained'.
-% 
+%
 % The Current Maintainer of this work is normas-utf-sf.net.
-% 
+%
 % This work consists of the file normas-utf-tex.cls
 
 % dependência: abntex >= 0.9-beta2
@@ -101,16 +101,16 @@
 \renewcommand{\capa}{
 	\begin{titlepage}
 		\begin{center}
-		  \begin{espacosimples} 
+		  \begin{espacosimples}
 				\large\MakeUppercase{\ABNTinstituicaodata}\\
 				\ABNTifnotempty{\UTFPRdepartamentodata}
 				{
 					\MakeUppercase{\UTFPRdepartamentodata}\\
 				}
-				\large\MakeUppercase{\UTFPRprogramadata}\par	
-		\end{espacosimples}		
-	 \end{center}		
-		\vspace{12pt}	
+				\large\MakeUppercase{\UTFPRprogramadata}\par
+		\end{espacosimples}
+	 \end{center}
+		\vspace{12pt}
 		\begin{center}
 			\begin{espacosimples}
 				\large\MakeUppercase{\ABNTautordata}\\
@@ -122,7 +122,7 @@
 		\vspace{60pt}
 		\begin{center}
 		  \begin{espacosimples}
-			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par 
+			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
 			\end{espacosimples}
 		\end{center}
 		\vspace{12pt}
@@ -143,7 +143,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% FOLHA DE ROSTO 
+% FOLHA DE ROSTO
 
 \newcommand{\esporient}[2]
 {
@@ -178,7 +178,7 @@
 			\large\ABNTchapterfont \MakeUppercase{\ABNTtitulodata} \par
 		\end{center}
 		\vspace{60pt}
-		\hspace{.45\textwidth}	
+		\hspace{.45\textwidth}
 		\begin{minipage}{.55\textwidth}
 			\begin{espacosimples}
 				\ABNTcomentariodata\par
@@ -197,7 +197,7 @@
                                   }
                                 }
 
-				\end{espacosimples}		
+				\end{espacosimples}
 		\end{minipage}
 		\vfill
 		\begin{center}
@@ -357,7 +357,7 @@
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   DEDICATORIA  
+%   DEDICATORIA
 
 \newenvironment{dedicatoria}%
 {%
@@ -380,7 +380,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% AGRADECIMENTOS 
+% AGRADECIMENTOS
 
 \newenvironment{agradecimentos}%
 {%
@@ -390,11 +390,11 @@
 }%
 {
 	\newpage
-} 
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EPIGRAFE  
+% EPIGRAFE
 
 \newenvironment{epigrafe}%
 {%
@@ -439,7 +439,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ABSTRACT
- 
+
 \renewenvironment{abstract}%
 {%
 	\if@openright\cleardoublepage\else\clearpage\fi%
@@ -533,7 +533,7 @@
 	\@tempdima 2.8em
 	--\advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
 	%{\MakeUppercase{Tabela \normalfont #1}}\nobreak \tabfillnum{#2}
-	{\MakeUppercase{Tabela} \normalfont #1}\nobreak \tabfillnum{#2} % 
+	{\MakeUppercase{Tabela} \normalfont #1}\nobreak \tabfillnum{#2} %
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -666,7 +666,7 @@
 			#1\hspace{0.4em}\nobreak\dotfill\nobreak
 			\ifthenelse{\boolean{ABNTpagenumstyle}}
 			{%
-				\hb@xt@\@pnumwidth{\hss 
+				\hb@xt@\@pnumwidth{\hss
 				\ifthenelse{\not\equal{#2}{}}{{#2}}{}}
 				\begin{spacing}{\taxaespacomeio}\par\end{spacing}
 			}
@@ -864,10 +864,10 @@
 {
   \if@twoside							%
 		\@twosidetrue \@mparswitchtrue
-	\fi			
+	\fi
 	\renewcommand{\chaptertitlepagestyle}{plainheader}
 	\renewcommand{\thepage}{\arabic{page}}
-	\addtocounter{page}{1}  
+	\addtocounter{page}{1}
 	%\setcounter{page}{1}
 
 % Observacoes:
@@ -882,7 +882,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LEGENDAS 
+% LEGENDAS
 
 \newcommand{\captionfonts}{\small}
 
@@ -913,7 +913,7 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% REFERENCIAS 
+% REFERENCIAS
 
 % \providecommand{\ABNTbibliographyname}{}
 \renewcommand{\ABNTbibliographyname}{REFER\^ENCIAS}

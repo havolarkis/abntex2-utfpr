@@ -3,7 +3,7 @@
 % principal do documento a ser produzido e inserir a linha
 % \usepackage{CUSTOMIZACOES} no preâmbulo do documento, como no exemplo:
 
-\documentclass[12pt,openright,twoside,a4paper,english,french,spanish,brazil]{abntex2}
+\documentclass[12pt,openright,oneside,a4paper,english,brazil]{abntex2}
 %\usepackage{abntex2-utfpr}   % usa o arquivo CUSTOMIZACOES.sty
 \usepackage{../abntex2-utfpr} % caso deseje utilizar o arquivo dentro de uma pasta
 
@@ -17,16 +17,33 @@
 \programa{Programa de P\'os-gradua\c{c}\~ao em Engenharia El\'etrica e Inform\'atica Industrial} % nome do programa
 \area{Inform\'atica Industrial} % [Engenharia Biom\'edica] ou [Inform\'atica Industrial] ou [Telem\'atica]
 
+\tipotrabalho{Disserta\c{c}\~ao} % [Disserta\c{c}\~ao] ou [Tese]
+\nivel{Mestrado} % [Mestrado] ou [Doutorado]
+%\titulacao{Mestre} % [Mestre] ou [Doutor]
+
+\titulo{{T\'itulo em portugu\^es}} % titulo do trabalho em portugues
+%\title{\MakeUppercase{Title in English}} % titulo do trabalho em ingles
+
+\autor{Nome do Autor} % autor do trabalho
+%\cita{SOBRENOME, Nome} % sobrenome (maiusculas), nome do autor do trabalho
+
+%\palavraschave{Palavra-chave 1, Palavra-chave 2, ...} % palavras-chave do trabalho
+%\keywords{Keyword 1, Keyword 2, ...} % palavras-chave do trabalho em ingles
+
+\preambulo{Modelo canônico de trabalho monográfico acadêmico em conformidade com
+as normas ABNT apresentado à comunidade de usuários \LaTeX.}
+
 \orientador{Nome do Orientador} % nome do orientador do trabalho
-%\orientador[Orientadora:]{Nome da Orientadora} % <- no caso de orientadora, usar esta sintaxe
-%\coorientador{Nome do Co-orientador} % nome do co-orientador do trabalho, caso exista
-%\coorientador[Co-orientadora:]{Nome da Co-orientadora} % <- no caso de co-orientadora, usar esta sintaxe
-%\coorientador[Co-orientadores:]{Nome do Co-orientador} % no caso de 2 co-orientadores, usar esta sintaxe
-%\coorientadorb{Nome do Co-orientador 2}	% este comando inclui o nome do 2o co-orientador
 
 \local{Curitiba} % cidade
 \data{\the\year} % ano automatico
 
+\makeindex
+
 \begin{document}
+
+\imprimircapa
+
+\imprimirfolhaderosto
 
 \end{document}
