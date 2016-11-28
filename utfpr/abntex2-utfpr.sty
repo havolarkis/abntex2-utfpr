@@ -52,24 +52,20 @@
 \renewcommand{\imprimircapa}{%
   \begin{capa}%
     \center
-    \large\MakeUppercase{\imprimirinstituicao}
-
-    \abntex@ifnotempty{\imprimirdepartamento} {\MakeUppercase{\imprimirdepartamento}}
-
-    \large\MakeUppercase{\imprimirprograma}
-    \vspace{12pt}
-
-    \MakeUppercase{\ABNTEXchapterfont\large\imprimirautor}
-
-    \vspace{60pt}
-    \begin{center}
-        \large\ABNTEXchapterfont \MakeUppercase{\imprimirtitulo}
-    \end{center}
+    \large
+    \MakeUppercase\imprimirinstituicao\par
+    \abntex@ifnotempty{\imprimirdepartamento} {\MakeUppercase\imprimirdepartamento}\par
+    \MakeUppercase\imprimirprograma\par
+    \ABNTEXchapterfont
+    \vspace{3cm}
+    \MakeUppercase\imprimirautor\par
+    \vspace{3cm}
+    \MakeUppercase\imprimirtitulo\par
     \vfill
-
-    \large\imprimirlocal
-
-    \large\imprimirdata
+    \imprimirautor\par
+    \vfill
+    \imprimirlocal\par
+    \imprimirdata
   \end{capa}
 }
 
